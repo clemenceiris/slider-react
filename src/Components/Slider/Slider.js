@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './Slider.css'
 import dataSlider from './dataSlider'
+import BtnSlider from './BtnSlider'
 
 export default function Slider() {
 
@@ -8,6 +9,14 @@ export default function Slider() {
         index: 1,
         inProgress: false
     })
+
+    const nextSlide = () => {
+        console.log("NEXT");
+    }
+
+    const prevSlide = () => {
+        console.log("PREV");
+    }
 
     return (
         <div className="container-slider">
@@ -21,6 +30,8 @@ export default function Slider() {
                     </div>
                 )
             })}
+            <BtnSlider moveSlide={nextSlide} direction={"next"} />
+            <BtnSlider moveSlide={prevSlide} direction={"prev"} />
         </div>
     )
 }
